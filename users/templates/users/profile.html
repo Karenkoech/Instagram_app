@@ -1,0 +1,41 @@
+{% extends 'myapp/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if user.profile.profile_image.url %}
+    <div class="row m-5"  id="profile">
+      <div class="col-md-3">
+        <img src="{{user.profile.profile_image.url}}" alt="" id="profilepic" class="img-fluid">
+        {% else %}
+        <form  action="{%url 'profile' %}" method="post" enctype="multipart/form-data" style="margin-top:10%;">
+            {% csrf_token %}
+            <input type="submit" class="btn-sm btn-outline-info" value="Add Profile">
+        </form>
+        {% endif %}
+        <div class="col-md-3">
+          <h3>{{user.username}}</h3>
+          
+        </div>
+      </div>
+      <div class="col-md-3" id="top">
+          <div class="">
+              <p>Following:</p>
+              <p>{{user.profile_image.following}}</p>
+          </div>
+          <div class=""> 
+              <p>Followers:</p> 
+              <p>{{followercount}}</p>
+          </div>
+          <div class="">
+              <button type="button" class="btn-lg btn-outline-danger">Follow</button>
+          </div>
+         <!-- <div id="post">
+            <form  action="{%url 'profile' %}" method="post" enctype="multipart/form-data" style="margin-top:10%;color: white;">
+                {% csrf_token %}
+                <input type="submit" class="btn-lg btn-outline-info" value="New post">
+            </form>
+        </div> -->
+              
+      </div>     
+  </div>
+  {% endblock %}

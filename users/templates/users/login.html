@@ -1,0 +1,51 @@
+{% extends 'myapp/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class='row col-xs-12 col-lg-10 mt-5 pl-sm-5 pr-sm-5 p-0' style="margin: 0 auto;">
+  <div class="phone-side-content d-none d-lg-inline col-5 ml-5 p-0 pl-2 mr-0">
+      <img src="/media/insta2.png" alt="phone image" style="height:35rem;">
+  </div>
+  <div class='signup-content text-center col-xs-12 col-lg-5 m-md-0 ml-sm-5 m-xs-0'>
+      <div class='card p-4 pt-4'>
+          <p><img src="/media/insta.jpg" alt="logo" style="width:170px"></p>  
+          <form method="post" action="{% url 'login' %}">
+              {% csrf_token %}
+              {{ form | crispy }}
+              <input type="submit"  class="btn btn-primary col-11 mt-2 p-1" value="Log In" style="font-size: 0.9rem; font-weight: 600; background-color:#0095f6; " />
+              <input type="hidden" name="next" value="" href="{% url 'home' %}" />
+          </form>
+
+          <p><img class='mb-2 mt-3'src="" style="width: 80%;"></p>
+          <a href="#" class='btn p-0 text-light mb-3' style="background-color: #fff;"><i class="fa fa-facebook" aria-hidden="true" style="background-color: #385185;color:white; padding:0.14rem 0.14rem 0rem 0.3rem; font-size:small;"></i>
+              <b style="color:#385185;font-size: 0.9rem;">Login with Facebook</b></a>
+      </div>
+      <div class='card text-center mt-1 p-4'>
+          <small>Don't have an account? <a href="{% url 'register'%}" style="color: #0095f6 !important">Sign Up</a></small>
+      </div>
+  </div>
+</div>
+
+<footer class='col-12 mb-2 mt-5 justify-content-center' style="font-size: 0.75rem; color:#8e8e8e">
+  <p class='text-center'style='cursor:pointer;'> About  &emsp;Blog  &emsp;Jobs &emsp; Help &emsp; API  &emsp;Privacy &emsp; Terms &emsp; Top Accounts &emsp; Hashtags &emsp;Locations</p>
+  <p class='text-center'style='cursor:pointer;'> English  © 2021 Instagram from Facebook</p>
+</footer>
+
+  <!-- <div class="container my-5">
+    <div class="" style="max-height:700px;max-width: 500px">
+    <form method="POST">
+      {% csrf_token %}
+    <fieldset class="form-group">
+      <h1 class="text-center bg-secondary">Sign In</h1> <br/>
+          {{ form | crispy }}
+    </fieldset>
+          <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div>
+        <a href="{% url 'register' %}">Need an account?</a>
+    </div>
+  </div>
+</div> -->
+      
+
+  {% endblock %}
