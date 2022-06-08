@@ -1,0 +1,30 @@
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #dbc3c3;
+    
+  }
+  .navbar {
+    color: #c24343;
+    background-color: #f9c5c5;
+    border-color: #c24343;
+    border-radius: 0;
+    margin-bottom: 0;
+
+  }
+  .wrapper {
+    position: relative;
+    width: 975px;
+    height: 54px;
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px 0px 18px;
+  }
+  
