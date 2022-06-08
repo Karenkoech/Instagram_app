@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container m-5">
+
+        <div class="row justify-content-center p-4">
+            <div class="col-md-4">
+                <h4 class="text-center m-4">CREATE NEW POST</h4>
+                <div class="card bg-outline-secondary">
+                    <form method='POST' action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="mb-3 m-4">
+                            <input type="file" src="" alt="" class="form-control" name="image">
+                        <div class="form-group mt-3 m-4">
+                            <label>Image caption:</label>
+                            <textarea rows="2" cols="30" name="comment" form="usrform" placeholder="Add caption...">
+                            
+                            </textarea>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'home' %} " class="btn btn-outline-dark m-3" type='submit'>Post</a>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+{% endblock %}

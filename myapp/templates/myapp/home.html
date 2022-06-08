@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html'%}
+{% load bootstrap4 %}
+
+{% block title %}
+Photos
+{% endblock %}
+
+{% block content %}
+<div class='row col-xs-12 col-lg-10 mt-5 pl-sm-5 pr-sm-5 p-0' style="margin: 0 auto;">
+    <div class="phone-side-content d-none d-lg-inline col-5 ml-5 p-0 pl-2 mr-0">
+        <img src="/media/insta.jpg" alt="phone image" style="height:35rem;">
+    </div>
+    <div class='signup-content text-center col-xs-12 col-lg-5 m-md-0 ml-sm-5 m-xs-0'>
+        <div class='card p-4 pt-4'>
+            <p><img src="/media/b3.jpeg" alt="logo" style="width:200px;"></p> 
+            <p><img src="/media/devplanner4.jpg" alt="logo" style="width:200px"></p>  
+            <p><img src="/media/img_5.jpg" alt="logo" style="width:200px"></p>  
+   
+  
+            <p><img class='mb-2 mt-3'src="" style="width: 80%;"></p>
+            
+        </div>
+        <div class='card text-center mt-1 p-4'>
+            <small><a href="{% url 'photos' %}" class="btn btn-primary">View</a></small>
+        </div>
+    </div>
+  </div>
+  
+
+
+{% endblock %}

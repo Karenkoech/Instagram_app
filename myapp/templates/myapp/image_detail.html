@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html'%}
+{% load bootstrap4 %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class="border round">
+        <h5 class="my-5 text-center">{{image.image_name}}</h5>
+        <p class="text-center">{{image.image_caption}}</p>
+        <img src="{{image.image_url}}" class="img-fluid" alt="Responsive image">
+    </div>
+{% endblock %}
