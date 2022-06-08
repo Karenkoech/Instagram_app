@@ -2,11 +2,14 @@ from multiprocessing import context
 from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from datetime import datetime
 
 from .models import Image,Profile
 
 # Create your views here.
+
+
 
 class ImageListView(ListView):
     model = Image
