@@ -8,14 +8,15 @@ from datetime import datetime
 from .models import Image,Profile
 
 # Create your views here.
+@login_required
+def home(request):
+    image = Image.objects.all()
+    context={
+        'image': image
+    }
+    return render(request, 'myapp/home.html',context)
+    
 
-
-
-class ImageListView(ListView):
-    model = Image
-    template_name = 'myapp/home.html' # <app>/<model>_<viewtype>.html
-    context_object_name = 'images'
-    ordering = ['image_date']
 
 class ImageDetailView(DetailView):
     model = Image
@@ -43,6 +44,7 @@ def search_profile(request):
     else:
         return render(request, 'myapp/search.html')
 
+@login_required
 def addImage(request):
     profiles = Profile.objects.all()
 

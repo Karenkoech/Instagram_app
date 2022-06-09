@@ -1,14 +1,14 @@
 
 from django.urls import path
-from .views import ImageListView,ImageDetailView
-from . import views
+from .views import ImageDetailView
+from myapp.views import home,photos,search_profile,addImage
 
 urlpatterns = [
-    path('', ImageListView.as_view(), name='home'),
+    path('',home, name='home'),
     path('image/<int:pk>/', ImageDetailView.as_view(), name='image_detail'),
-    path('photos/', views.photos, name='photos'),
-    path('search_profile/', views.search_profile, name='search_profile'),
-    path('addImage/', views.addImage, name='addImage'),
+    path('photos/', photos, name='photos'),
+    path('search_profile/', search_profile, name='search_profile'),
+    path('addImage/', addImage, name='addImage'),
     
 
    

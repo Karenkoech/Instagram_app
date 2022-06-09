@@ -9,6 +9,7 @@
         {% else %}
         <form  action="{%url 'profile' %}" method="post" enctype="multipart/form-data" style="margin-top:10%;">
             {% csrf_token %}
+            {{ form | crispy }}
             <input type="submit" class="btn-sm btn-outline-info" value="Add Profile">
         </form>
         {% endif %}
